@@ -1,11 +1,11 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-
 #define vInt vector<int>
+
 vInt deletecard(vInt a, int c1, int c2, int c3);
 
-double isPossible(vInt a, int m) {
+double Possibility(vInt a, int m) {
     int cnt = 0;
     for (int i = 0; i < a.size(); i++) {
         if (m + a[i] <= 20) { cnt++; }
@@ -18,12 +18,10 @@ int main(void) {
         vInt a;
         for (int i = 1; i <= 10; i++) { a.push_back(i); }
 		
-	    int c1, c2, c3; cin >> c1 >> c2 >> c3;
+		int c1, c2, c3; cin >> c1 >> c2 >> c3;
         a = deletecard(a, c1, c2, c3);
 
-        double s = isPossible(a, c1 + c2);
-
-        if (s * 100.0 >= 50.0) { cout << "YES" << endl; }
+        if (Possibility(a, c1 + c2) * 100.0 >= 50.0) { cout << "YES" << endl; }
         else { cout << "NO" << endl; }
 	}
 	return 0;
